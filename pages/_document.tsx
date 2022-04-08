@@ -9,14 +9,14 @@ export default function Document() {
           name="description"
           content="Online Tool to Play FLAMES a game that uses to find out the relationship between two people by their names"
         />
-        <meta property="og:title" content="AlgoViz" />
+        <meta property="og:title" content="FLAMES" />
         <meta
           property="og:description"
           content="Online Tool to Play FLAMES a game that uses to find out the relationship between two people by their names"
         />
         <meta
           property="og:url"
-          content="https://www.flames.sankalpafernando.com/"
+          content="https://flames.sankalpafernando.com/"
         />
         <meta
           property="og:image"

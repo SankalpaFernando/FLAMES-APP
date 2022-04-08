@@ -35,30 +35,27 @@ const getFLAMESComponent = (count:number,firstName:string,secondName:string):str
 }
 
 
-const getUnMatchCount = (firstNameChars:Map<string,number>,secondNameChars:Map<string,number>) => {
+const getUnMatchCount = (firstNameChars:any,secondNameChars:any) => {
   let unMatchCount = 0;
-  const longestCharMap =
-    firstNameChars.size > secondNameChars.size
-      ? firstNameChars
-      : secondNameChars;
+  const longestCharMap =firstNameChars.size > secondNameChars.size? firstNameChars: secondNameChars;
   const shortestCharMap =
     firstNameChars.size > secondNameChars.size
       ? secondNameChars
       : firstNameChars;
 
   let shortKeySet = Array.from(shortestCharMap.keys());
-
+  
 
   for (let char of Array.from(longestCharMap.keys())) {
     if (shortestCharMap.has(char)) {
-      unMatchCount += Math.abs((longestCharMap.get(char) - shortestCharMap.get(char)));
+      unMatchCount += Math.abs((longestCharMap?.get(char) - shortestCharMap?.get(char)));
       shortKeySet = shortKeySet.filter((key) => key != char);
     } else {
-      unMatchCount += longestCharMap.get(char);
+      unMatchCount += longestCharMap?.get(char);
     }
   }
   for (let char of shortKeySet) {
-    unMatchCount += shortestCharMap.get(char);
+    unMatchCount += shortestCharMap?.get(char);
   }
   return unMatchCount;
 }
